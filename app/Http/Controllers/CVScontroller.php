@@ -16,7 +16,7 @@ class CVScontroller extends Controller
 
     public function importexport()
     {
-        return view('probka.importexport',compact(null));
+        return view('probka.importexport', compact(null));
     }
 //
 //    public function downloadExcel(Request $request, $type)
@@ -78,41 +78,32 @@ class CVScontroller extends Controller
 //        return Redirect::back()->withErrors('message','Please Check your file, Something is wrong there.');
 //    }
 
-    public function importCVS(Request $request){
-        $file = $request->file('import_file')->getRealPath() . '.csv';
-        $custArr = $this->csvToArray($file);
-        if (!$file) {
-            return Session::flash('success', 'Не-а!(((');
-        }
-        dd($customerArr);
-
-        for ($i=0;$i<count($custArr);$i ++)
-        {
-            $p=Post::firstOrNew($custArr[$i]);
-            $p.save();
-        }
-
-        return Session::flash('success', 'Here is your success message');
-    }
-
-    function csvToArray($filename = '', $delimiter = ',')
+    public function importCVS(Request $request)
     {
-        if (!file_exists($filename) || !is_readable($filename))
-            return false;
+        if ($request->file('import_file')) {
+            $path = $request->file('import_file')->getRealPath();
+            $data = Excel::load($path, function ($reader) {
+            })->get();
 
-        $header = null;
-        $data = array();
-        if (($handle = fopen($filename, 'r')) !== false)
-        {
-            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false)
-            {
-                if (!$header)
-                    $header = $row;
-                else
-                    $data[] = array_combine($header, $row);
+            if (!empty($data) && $data->count()) {
+                foreach ($data->toArray() as $row) {
+                    if (!empty($row)) {
+                        $dataArray[] =
+                            [
+                                'post_title' => $row['post_title'],
+                                'post_content' => $row['post_content'],
+                                'author_id' => $row['author_id'],
+                                'post_slug' => $row['author_id'],
+                                'created_at' => $row['created_at'],
+                                'post_type' => 'post'
+                            ];
+                    }
+                }
+                if (!empty($dataArray)) {
+                    Post::insert($dataArray);
+                    return back();
+                }
             }
-            fclose($handle);
         }
-        return $data;
     }
 }
