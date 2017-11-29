@@ -3,6 +3,7 @@
 @section('title', '| Blog Tutorial')
 
 @section('content')
+
     <div class="row">
         <div class="col-sm-8 blog-main">
 
@@ -23,7 +24,7 @@
                 @endforeach
             @else
 
-                <p>No post added yet!</p>
+                <p>Постов нет</p>
 
             @endif
 
@@ -32,11 +33,11 @@
                 <nav>
                     <ul class="pager">
                         @if( $posts->firstItem() > 1 )
-                            <li><a href="{{ $posts->previousPageUrl() }}">Previous</a></li>
+                            <li><a href="{{ $posts->previousPageUrl() }}">След. страница</a></li>
                         @endif
 
                         @if( $posts->lastItem() < $posts->total() )
-                            <li><a href="{{ $posts->nextPageUrl() }}">Next</a></li>
+                            <li><a href="{{ $posts->nextPageUrl() }}">Предыдущая страница</a></li>
                         @endif
                     </ul>
                 </nav>

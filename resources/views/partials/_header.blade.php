@@ -31,12 +31,12 @@
         <div class="header">
             <ul class="nav nav-pills text-center"  id="nav">
                 <li><a  href="{{route('home')}}">Главная страница</a> </li>
-                <li><a href="{{route('posts.store')}}">Блог</a></li>
+                <li><a href="{{route('blog')}}">Блог</a></li>
                 {{--<li><a href="{{}}"</li>--}}
                 <li>
                 @if (Auth::guest())
                     <li><a class="blog-nav-item {{ Request::is('login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a></li>
-                    <li><a class="blog-nav-item {{ Request::is('register') ? 'active' : '' }}" href="{{ route('register') }}">Register</a></li>
+                    <li><a class="blog-nav-item {{ Request::is('register') ? 'active' : '' }}" href="{{ route('register') }}">Регистрация</a></li>
 
                 @else
 
@@ -46,18 +46,13 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('posts.index') }}">All Posts</a></li>
-                            <li><a href="{{ route('posts.create') }}">Add New</a></li>
-
-                            <li><hr/></li>
-
-                            <li><a href="{{ route('pages.index') }}">All Pages</a></li>
-                            <li><a href="{{ route('pages.create') }}">Add New</a></li>
+                            <li><a href="{{ route('posts.index') }}">Все посты</a></li>
+                            <li><a href="{{ route('posts.create') }}">Добавить новый</a></li>
 
                             <li><hr/></li>
 
                             <!--we'll work on this later-->
-                            <li><a href="{{ route('comments.index') }}">All Comments</a></li>
+                            <li><a href="{{ route('comments.index') }}">Все комментарии</a></li>
 
                             <li><hr/></li>
 

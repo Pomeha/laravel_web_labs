@@ -22,11 +22,10 @@
 
                     <table class="table">
                         <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Content</th>
-                            <th>Category</th>
-                            <th>Date</th>
+                            <th>Тема</th>
+                            <th>Автор</th>
+                            <th>Содержание</th>
+                            <th>Дата</th>
                             <th>&nbsp;</th>
                         </tr>
                         <tr>
@@ -55,7 +54,7 @@
                                             {{ $post->category_ID }}
                                         </a>
                                     </td>
-                                    <td>Published {{ date( 'j/m/Y', strtotime( $post->created_at ) ) }}</td>
+                                    <td>Создано {{ date( 'j/m/Y', strtotime( $post->created_at ) ) }}</td>
                                     <td>
                                         <form class="d-inline" action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                             {{ csrf_field() }}
@@ -64,14 +63,14 @@
                                             <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
                                         </form>
 
-                                        <a class="btn btn-sm btn-info" href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                                        <a class="btn btn-sm btn-info" href="{{ route('posts.edit', $post->id) }}">Изменить</a>
                                     </td>
                                 </tr>
                             @endforeach
                         @else
 
                             <tr>
-                                <td colspan="5">No post has been added yet!</td>
+                                <td colspan="5">Постов нет</td>
                             </tr>
 
                             @endif

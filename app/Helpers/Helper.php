@@ -182,7 +182,7 @@ class Helper
             </ul>
             <?php
         } else {
-            echo "Be the first to comment.";
+            echo "Оставьте свой комментарий";
         }
 
         return ob_get_clean();

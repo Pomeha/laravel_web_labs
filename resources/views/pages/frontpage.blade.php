@@ -1,8 +1,10 @@
 @extends('main')
 
 @section('content')
+    <br>
+    <br>
     <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="blokkok col-sm-8 blog-main">
 
             @if( $posts->count() )
                 @foreach( $posts as $post )
@@ -21,20 +23,19 @@
                 @endforeach
             @else
 
-                <p>No post added yet!</p>
+                <p>Постов нет!</p>
 
             @endif
 
-            {{-- Display pagination only if more than the required pagination --}}
             @if( $posts->total() > 6 )
                 <nav>
                     <ul class="pager">
                         @if( $posts->firstItem() > 1 )
-                            <li><a href="{{ $posts->previousPageUrl() }}">Previous</a></li>
+                            <li><a href="{{ $posts->previousPageUrl() }}">Следующая страница</a></li>
                         @endif
 
                         @if( $posts->lastItem() < $posts->total() )
-                            <li><a href="{{ $posts->nextPageUrl() }}">Next</a></li>
+                            <li><a href="{{ $posts->nextPageUrl() }}">Предыдущая</a></li>
                         @endif
                     </ul>
                 </nav>

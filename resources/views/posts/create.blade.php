@@ -9,12 +9,12 @@
         {{-- Check if current user is logged-in or a guest --}}
         @if (Auth::guest())
 
-            <p class="mt-5">Please <a href="/login/">login</a> to add a new post.</p>
+            <p class="mt-5">Пожалуйста <a href="/login/">авторизуйтесь</a> что бы добавить пост.</p>
 
         @else
 
             <div class="blog-header">
-                <h1 class="blog-title">Add New Post</h1>
+                <h1 class="blog-title">Добавить новый пост</h1>
             </div>
 
             <div class="row">
@@ -27,7 +27,7 @@
                         <input type="hidden" name="post_type" value="post" />
 
                         <div class="form-group{{ $errors->has('post_title') ? ' has-error' : '' }}">
-                            <label for="post_title">Title</label> <br/>
+                            <label for="post_title">Тема</label> <br/>
                             <input type="text" name="post_title" id="post_title" value="{{ old('post_title') }}" />
 
                             @if ($errors->has('post_title'))
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('post_slug') ? ' has-error' : '' }}">
-                            <label for="post_slug">Slug</label> <br/>
+                            <label for="post_slug"></label> <br/>
                             <input type="text" name="post_slug" id="post_slug" value="{{ old('post_slug') }}" />
 
                             @if ($errors->has('post_slug'))
@@ -60,13 +60,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="post_thumbnail">Thumbnail</label> <br/>
+                            <label for="post_thumbnail">Изображение</label> <br/>
                             <input type="file" name="post_thumbnail" id="post_thumbnail" />
                         </div>
 
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Publish" />
-                            <a class="btn btn-primary" href="{{ route('posts.index') }}">Cancel</a>
+                            <a class="btn btn-primary" href="{{ route('posts.index') }}">Отмена</a>
                         </div>
                     </form>
 

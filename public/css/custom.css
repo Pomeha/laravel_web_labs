@@ -1,3 +1,19 @@
+.blog-post {
+    color: black;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    -moz-border-radius:15px;
+    transition: all 0.4s ease-in-out;
+}
+.blog-post a {
+    color: black;
+             }
+
+.blog-post-title{
+    color: black;
+    background-color: white;
+}
+
 
 .blog-message > p {
     font-size: 16px;
@@ -62,10 +78,11 @@ body{
 }
 
 .nav {
-    width:70%;
+    width:55%;
     margin: 0 auto;
     /*display: flex;*/
-    flex-direction: row-reverse;
+    /*font: ;*/
+    /*flex-direction: row-reverse;*/
 
     font-size: 15px;
     font-weight: 300;
