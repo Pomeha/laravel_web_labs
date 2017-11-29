@@ -17,6 +17,9 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function index()
     {
         // Fetch records in pagination so only 10 pages per page

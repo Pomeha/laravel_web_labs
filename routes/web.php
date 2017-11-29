@@ -12,7 +12,9 @@
 */
 
 
-Route::get('/', 'PagesController@getIndex')->name('home');
+Route::get('home', function (){
+    return view('home');
+})->name('home');
 Route::get('article/{slug}', 'ArticlesController@getSingle')->name('single');
 Route::get('articles', 'ArticlesController@getIndex');
 Route::resource('pages', 'PagesController');
@@ -22,7 +24,6 @@ Route::post('comments/{comment}/approve', 'CommentsController@approveComment')->
 Route::post('comments/{comment}/unapprove', 'CommentsController@unapproveComment')->name('comment.unapprove');
 Route::post('importCVS', 'CVScontroller@importCVS');
 Route::get('importexport', 'CVScontroller@importexport');
-Route::get('downloadExcel/{type}', 'CVScontroller@downloadExcel');
-
+Route::get('index', 'PagesController@getIndex')->name('blog');
 
 Auth::routes();

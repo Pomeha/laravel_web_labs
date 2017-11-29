@@ -1,7 +1,6 @@
 <footer class="blog-footer">
-    <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a>
-    <p>
-        <a href="#">Back to top</a>
+    <p class="text-center">
+        <a class="btn btn-info" href="#">Наверх</a>
     </p>
 </footer>
 

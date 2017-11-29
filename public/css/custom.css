@@ -1,0 +1,90 @@
+
+.blog-message > p {
+    font-size: 16px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body{
+    background: url("/bg/proxy.jpg");
+}
+
+.blokkok {
+    margin-top: 10px;
+    margin-left: 4%;
+    height:auto;
+    width: 90%;
+    font-size: 15px;
+    padding: 20px;
+    background: 20px;
+    background: rgba(204,204,204,0.6);
+    border: 3px solid #aaaaaa;
+    border-radius: 10px;
+    -moz-border-radius:15px;
+    transition: all 0.4s ease-in-out;
+}
+
+.blokkok > .container{
+    color: black;
+}
+.blokkok > img {
+    display: block;
+    margin: 0 auto;
+}
+
+.lostablos{
+    font-size: 18px;
+    text-align: center;
+}
+.lostablos li{
+    display: inline-block;
+    margin: 0 40px;
+}
+.lostablos li:hover{
+    color: aqua;
+}
+.lostablos img{
+    margin-left: 30px;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
+.lostablos h1{
+    font-family: clara;
+    font-size:30px;
+    color: gold;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+.ff{
+    color: white;
+}
+
+.nav {
+    width:70%;
+    margin: 0 auto;
+    /*display: flex;*/
+    flex-direction: row-reverse;
+
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;}
+
+.nav > li:hover > a {
+    text-decoration: none;
+    background-color: #695ca1;
+}
+
+.nav > li.active >a {
+    background-color: #7a0c31;
+}
+.nav > li.active:hover > a {
+    color:white;
+    background-color: #5a1043;
+}
+
+.nav > li > a {
+    background-color: white;
+    color: black;
+}

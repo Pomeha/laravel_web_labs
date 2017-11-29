@@ -3,8 +3,9 @@
 @section('title', '| Login')
 
 @section('content')
-
-<div class="container">
+<br>
+<br>
+<div style="color: black;" class="container">
     <div class="row mt-5">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

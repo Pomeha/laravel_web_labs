@@ -14,6 +14,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/jumbotron-narrow.css')}}"
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" href="{{ asset('css/ie10-viewport-bug-workaround.css') }}" />
 
@@ -22,25 +24,16 @@
 
     @yield('stylesheet')
 </head>
-<body>
+<body class="ff">
 
-<div class="blog-masthead">
+<nav class="nav navbar-fixed-top" >
     <div class="container">
-        <nav class="blog-nav">
-            <ul class="nav navbar-nav">
-                <li><a class="blog-nav-item {{ null == Request::query() ? 'active' : '' }}" href="/">Home</a></li>
-                <li><a class="blog-nav-item {{ Request::is('articles') ? 'active' : '' }}" href="/articles">Articles</a></li>
-
-                @if( Helper::get_pages() )
-                    @foreach( Helper::get_pages() as $page )
-                        <li><a class="blog-nav-item {{ $page->id == Request::query('page_id') ? 'active' : '' }}" href="/?page_id={{ $page->id }}">{{ $page->post_title }}</a></li>
-                    @endforeach
-                @endif
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
+        <div class="header">
+            <ul class="nav nav-pills text-center"  id="nav">
+                <li><a  href="{{route('home')}}">Главная страница</a> </li>
+                <li><a href="{{route('posts.store')}}">Блог</a></li>
+                {{--<li><a href="{{}}"</li>--}}
+                <li>
                 @if (Auth::guest())
                     <li><a class="blog-nav-item {{ Request::is('login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a></li>
                     <li><a class="blog-nav-item {{ Request::is('register') ? 'active' : '' }}" href="{{ route('register') }}">Register</a></li>
@@ -76,12 +69,12 @@
                                 </form>
                             </li>
                         </ul>
-                    </li>
-                @endif
+                    @endif
+                </li>
             </ul>
-        </nav>
+        </div>
     </div>
-</div>
+</nav>
 
 {{--
     Check if there is a success Session key
