@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-
+<br>
+<br>
+    <div class="blokkok" style="color: black;">
     <div class="blog-header">
         <h1 class="blog-title">{{ $post->post_title }}</h1>
     </div>
@@ -24,7 +26,7 @@
             </div><!-- /.blog-post -->
 
             <section class="mt-5" id="respond">
-                <h2>Comments</h2>
+                <h2>Комментарии</h2>
 
                 {{--display approved comments--}}
                 <?php
@@ -40,5 +42,5 @@
         </div><!-- /.blog-main
 
     </div><!-- /.row -->
-
+    </div>
 @endsection
