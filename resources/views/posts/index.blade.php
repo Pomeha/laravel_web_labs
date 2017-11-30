@@ -26,7 +26,6 @@
                             <th>Автор</th>
                             <th>Содержание</th>
                             <th>Дата</th>
-                            <th>&nbsp;</th>
                         </tr>
                         <tr>
                         {{-- Blade if and else --}}
