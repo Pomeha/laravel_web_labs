@@ -44,18 +44,21 @@
                         <a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
+                        @if(Auth::user()->role   === 'admin')
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ route('posts.index') }}">Все посты</a></li>
                             <li><a href="{{ route('posts.create') }}">Добавить новый</a></li>
-
+                            <li><a href="{{route('importexport')}}">Загрузить из файла</a> </li>
                             <li><hr/></li>
 
                             <!--we'll work on this later-->
                             <li><a href="{{ route('comments.index') }}">Все комментарии</a></li>
-
-                            <li><hr/></li>
-
+                                <li>
+                                        <a>admin</a>
+                            @else
+                                Non admin
+                            @endif
+                                </li>
                             <li>
                                 <a class="blog-nav-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
@@ -63,6 +66,8 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
+
+
                         </ul>
                     @endif
                 </li>

@@ -31,11 +31,11 @@
                 <nav>
                     <ul class="pager">
                         @if( $posts->firstItem() > 1 )
-                            <li><a href="{{ $posts->previousPageUrl() }}">Следующая страница</a></li>
+                            <li><a href="{{ $posts->previousPageUrl() }}">Предыдущая</a></li>
                         @endif
 
                         @if( $posts->lastItem() < $posts->total() )
-                            <li><a href="{{ $posts->nextPageUrl() }}">Предыдущая</a></li>
+                            <li><a href="{{ $posts->nextPageUrl() }}">Следующая страница</a></li>
                         @endif
                     </ul>
                 </nav>

@@ -5,7 +5,7 @@
     <input type="hidden" name="post_id" value="{{ $post_id }}" />
 
     <div class="form-group{{ $errors->has('comment_author') ? ' has-error' : '' }}">
-        <label for="comment_author">Name *</label> <br/>
+        <label for="comment_author">Имя *</label> <br/>
         <input type="text" name="comment_author" value="{{ old('comment_author') }}" />
 
         @if ($errors->has('comment_author'))
@@ -16,7 +16,7 @@
     </div>
 
     <div class="form-group{{ $errors->has('comment_author_email') ? ' has-error' : '' }}">
-        <label for="comment_author_email">Email Address *</label> <br/>
+        <label for="comment_author_email">Email *</label> <br/>
         <input type="text" name="comment_author_email" value="{{ old('comment_author_email') }}" />
 
         @if ($errors->has('comment_author_email'))
@@ -32,7 +32,7 @@
     </div>
 
     <div class="form-group">
-        <label for="comment_content">Message</label> <br/>
+        <label for="comment_content">Комментарий</label> <br/>
         <textarea cols="60" rows="6" name="comment_content">{{ old('comment_content') }}</textarea>
     </div>
 

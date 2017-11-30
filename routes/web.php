@@ -23,7 +23,7 @@ Route::resource('comments', 'CommentsController');
 Route::post('comments/{comment}/approve', 'CommentsController@approveComment')->name('comment.approve');
 Route::post('comments/{comment}/unapprove', 'CommentsController@unapproveComment')->name('comment.unapprove');
 Route::post('importCVS', 'CVScontroller@importCVS');
-Route::get('importexport', 'CVScontroller@importexport');
+Route::get('importexport', 'CVScontroller@importexport')->name('importexport');
 Route::get('index', 'PagesController@getIndex')->name('blog');
 
 Auth::routes();

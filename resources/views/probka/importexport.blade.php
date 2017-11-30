@@ -1,13 +1,11 @@
 @extends('main')
 
 @section('content')
-<div class="panel panel-primary">
+    <br>
+    <br>
+<div class="blokkok panel panel-primary">
 
-    <div class="panel-heading">
 
-        <h3 class="panel-title" style="padding:12px 0px;font-size:25px;"><strong>Laravel 5.3 - import export csv or excel file into database example</strong></h3>
-
-    </div>
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif

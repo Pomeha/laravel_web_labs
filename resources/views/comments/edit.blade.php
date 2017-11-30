@@ -40,7 +40,7 @@
                         <input type="hidden" name="post_id" value="{{ $comment->post_id }}" />
 
                         <div class="form-group{{ $errors->has('comment_author') ? ' has-error' : '' }}">
-                            <label for="comment_author">Name *</label> <br/>
+                            <label for="comment_author">Имя *</label> <br/>
                             <input type="text" name="comment_author" value="{{ $comment->comment_author }}" />
 
                             @if ($errors->has('comment_author'))
@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('comment_author_email') ? ' has-error' : '' }}">
-                            <label for="comment_author_email">Email Address *</label> <br/>
+                            <label for="comment_author_email">Email *</label> <br/>
                             <input type="text" name="comment_author_email" value="{{ $comment->comment_author_email }}" />
 
                             @if ($errors->has('comment_author_email'))
@@ -67,21 +67,21 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="comment_content">Message</label> <br/>
+                            <label for="comment_content">Сообщение</label> <br/>
                             <textarea cols="60" rows="6" name="comment_content">{{ $comment->comment_content }}</textarea>
                         </div>
 
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Update" />
-                            <a class="btn btn-primary" href="{{ route('comments.index') }}">Cancel</a>
+                            <a class="btn btn-primary" href="{{ route('comments.index') }}">Отмена</a>
                         </div>
                     </form>
 
                 </div>
 
                 <div class="col-md-4">
-                    <p>Submitted on: {{ date('F j, Y', strtotime( $comment->created_at )) }} @ {{ date('h:i', strtotime( $comment->created_at )) }}</p>
-                    <p>In response to: <a target="_blank" href="{{ route('single', $post->post_slug) }}"><strong>{{ $post->post_title }}</strong></a></p>
+                    <p>Подвержден: {{ date('F j, Y', strtotime( $comment->created_at )) }} @ {{ date('h:i', strtotime( $comment->created_at )) }}</p>
+                    <p>Отвечает: <a target="_blank" href="{{ route('single', $post->post_slug) }}"><strong>{{ $post->post_title }}</strong></a></p>
                 </div>
             </div>
 
