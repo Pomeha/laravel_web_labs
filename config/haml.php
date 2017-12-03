@@ -9,5 +9,5 @@
 		'options' => array(),
 		'filters' => array(),
 	),
-
+    'filters' => array(),
 );
