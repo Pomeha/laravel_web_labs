@@ -12,7 +12,7 @@
 */
 
 
-Route::get('home', function (){
+Route::get('/', function (){
     return view('home');
 })->name('home');
 Route::get('article/{slug}', 'ArticlesController@getSingle')->name('single');
