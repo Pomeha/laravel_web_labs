@@ -1,3 +1,10 @@
+@media (min-width:768px) {
+    .navbar-nav {
+        float:left;
+        margin:0;
+    }
+}
+
 .blog-post {
     color: black;
     border: 3px solid #000000;
@@ -105,3 +112,4 @@ body{
     background-color: white;
     color: black;
 }
+
