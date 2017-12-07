@@ -12,9 +12,15 @@
 */
 
 
-Route::get('home', function (){
+Route::get('/', function (){
     return view('home');
 })->name('home');
+
+Route::get('study',function (){
+    return view('probka.stud');
+})->name('study');
+
+route::get('photoalbum', 'PhotoController@index')->name('album');
 Route::get('article/{slug}', 'ArticlesController@getSingle')->name('single');
 Route::get('articles', 'ArticlesController@getIndex');
 Route::resource('pages', 'PagesController');
