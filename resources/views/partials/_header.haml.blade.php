@@ -15,6 +15,7 @@
         %link{:href => "#{ asset('css/ie10-viewport-bug-workaround.css') }", :rel => "stylesheet"}/
         / Custom styles for this template
         %link{:href => "#{ asset('css/blog.css') }", :rel => "stylesheet"}/
+
     %body
         %p
             @yield('stylesheet')
@@ -27,6 +28,10 @@
                     %li
                         %a{:href => "#{route('blog')}"} Блог
                     %li
+                        %a{:href => "#{route('album')}"} Альбом
+                    %li
+                        %a{:href => "#{route('study')}"} Учеба
+                    %li
                         @if (Auth::guest())
                         %li
                             %a.blog-nav-item(class="#{ Request::is('login') ? 'active' : '' }" href=route('login'))
@@ -36,28 +41,28 @@
                         @else
                         %li.dropdown
                             %a.blog-nav-item.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                            #{ Auth::user()->name }
-                            %span.caret
-                        @if(Auth::user()->role   === 'admin')
-                        %ul.dropdown-menu{:role => "menu"}
-                            %li
-                                %a{:href => "#{ route('posts.index') }"} Все посты
-                            %li
-                                %a{:href => "#{ route('posts.create') }"} Добавить новый
-                            %li
-                                %a{:href => "#{route('importexport')}"} Загрузить из файла
-                            %li
-                                %a{:href => "#{ route('comments.index') }"} Все комментарии
-                            %li
-                                %a admin
-                            @else
-                            %li
-                                %a Non admin
-                            @endif
-                            %li
-                                %a.blog-nav-item{:href => "#{ route('logout') }", :onclick => "event.preventDefault(); document.getElementById('logout-form').submit();"} Logout
-                                %form#logout-form{:action => "#{ route('logout') }", :method => "POST", :style => "display: none;"}
-                                {{ csrf_field() }}
+                                #{ Auth::user()->name }
+                                %span.caret
+                                @if(Auth::user()->role   === 'admin')
+                                %ul.dropdown-menu{:role => "menu"}
+                                    %li
+                                        %a{:href => "#{ route('posts.index') }"} Все посты
+                                    %li
+                                        %a{:href => "#{ route('posts.create') }"} Добавить новый
+                                    %li
+                                        %a{:href => "#{route('importexport')}"} Загрузить из файла
+                                    %li
+                                        %a{:href => "#{ route('comments.index') }"} Все комментарии
+                                    %li
+                                        %a admin
+                                    @else
+                                    %li
+                                        %a Non admin
+                                    @endif
+                                    %li
+                                        %a.blog-nav-item{:href => "#{ route('logout') }", :onclick => "event.preventDefault(); document.getElementById('logout-form').submit();"} Logout
+                                        %form#logout-form{:action => "#{ route('logout') }", :method => "POST", :style => "display: none;"}
+                                        {{ csrf_field() }}
                         @endif
             .container
                 .row
