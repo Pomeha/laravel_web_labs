@@ -2,10 +2,11 @@
 
 @section('content')
 
-.blokkok
-    .lostablos
+
+.slider{id: 'main-slider'}
+    .slider-wrapper
         - foreach($photos as $photo)
-            %img.item{:src => "#{asset($photo)}", width: 120, height: 240}
+            %img.slide{:src => "#{asset($photo)}", width: 120, height: 240, alt: "#{$photo}"}
 
 
 @endsection
