@@ -2,7 +2,7 @@
 @section('title', '| Statistics')
 
 @section ('content')
-    <div class="blokkok">
+    <div class="blokkok" style="color: black;">
         <h1>Рейтинг посещений за месяц</h1>
         <table class="table table-bordered table-responsive">
             <thead>
@@ -12,13 +12,13 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($stats as $i)
+            @foreach($stats as $stat)
                 <tr>
                     <td>
-                        {{$i->page_name}}
+                        {{$stat->page_name}}
                     </td>
                     <td>
-                        {{$i->count}}
+                        {{$stat->count}}
                     </td>
                 </tr>
             @endforeach

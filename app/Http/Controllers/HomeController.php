@@ -10,7 +10,7 @@ use App\Http\Requests;
 use App\Post;
 use Session;
 
-class PagesController extends Controller
+class HomeController extends Controller
 {
 
     /**

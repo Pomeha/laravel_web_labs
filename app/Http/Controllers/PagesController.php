@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Post;
 use Session;
+use Carbon\Carbon;
 
 class PagesController extends Controller
 {
@@ -161,6 +162,7 @@ class PagesController extends Controller
      */
     public function getIndex() {
         $posts = Post::paginate( 6 );
+        $this->Count('pages.index',Carbon::now()->month);
 
         // It replaces the previous `index.blade.php` blade file that is now used in displaying lists of added pages
         return view('pages.frontpage', [ 'posts' => $posts ]);

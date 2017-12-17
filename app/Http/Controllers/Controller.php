@@ -15,6 +15,7 @@ class Controller extends BaseController
 
     function Count($name,$month){
         $stata = Statistics::firstOrNew(array('page_name'=>$name,'month'=>$month));
+        $stata->count = $stata->count + 1;
         $stata->save();
     }
 }

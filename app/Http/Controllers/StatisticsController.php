@@ -11,7 +11,8 @@ class StatisticsController extends Controller
 {
     function index()
     {
-        $stats = Statistics::where('month',Carbon::now()->month);
-        return view('probka.statistic', ['stats' => $stats]);
+
+        $stats = Statistics::orderBy('id','DESC')->where('month',Carbon::now()->month)->get();
+        return view('probka.statistic', ['stats'=>$stats]);
     }
 }
