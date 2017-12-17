@@ -38,5 +38,6 @@ Route::get('newpredm','PredmController@Create')->name('newpredm');
 Route::post('savepredm','PredmController@Save')->name('savepredm');
 Route::get('ocenstud', 'OcenkaController@ocenstud')->name('ocenstud');
 Route::post('giveocen','OcenkaController@giveocen')->name('giveocen');
+Route::get('goodstuds','StudController@goodstuds')->name('goodstuds');
 
 Auth::routes();

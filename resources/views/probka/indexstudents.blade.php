@@ -17,6 +17,8 @@
             </thead>
             <tbody>
             @foreach($students as $student)
+                @foreach($ocenkas as $i)
+                    @if($student->fio == $i->stud_name)
                 <tr>
                     <td>
                         {{$student->fio}}
@@ -33,9 +35,13 @@
                         @endforeach
                     </td>
                     @endforeach
+                    @endif
+                @endforeach
                 </tr>
             @endforeach
             </tbody>
         </table>
+        <a href="{{route('goodstuds')}}" class="btn btn-success">Отличники</a>
+        <a href="{{route('indexstud')}}" class="btn btn-info">Все студенты</a>
     </div>
 @endsection

@@ -43,6 +43,9 @@ class StudController extends Controller
 
     public function goodstuds()
     {
-
+        $ocenkas = Ocenkas::where('rus', 'отлично')->get();
+        $predms = Predm::all();
+        $students = Students::all();
+        return view('probka.indexstudents',['students'=>$students,'predms'=>$predms,'ocenkas'=>$ocenkas]);
     }
 }

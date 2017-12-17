@@ -33,7 +33,7 @@
                                 %li
                                     %a.blog-nav-item{:href => "#{route('newpredm')}"} Добавить предмет
                                 %li
-                                    %a.blog-nav-item{:href => route('indexstud')} Отобразить студентов
+                                    %a.blog-nav-item{:href => route('indexstud'), style: 'background-color: red'} Отобразить студентов
                                 %li
                                     %a.blog-nav-item{:href => route('ocenstud')} Оценить студента
 
