@@ -23,8 +23,20 @@
         .container
             .header
                 %ul#nav.nav.nav-pills.text-center
-                    %li
-                        %a{:href => "#{route('createstud')}"} Добавить студена
+                    %li.dropdown
+                        %a.blog-nav-item.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                            Студенты
+                            %span.caret
+                            %ul.dropdown-menu{:role => "menu"}
+                                %li
+                                    %a.blog-nav-item{:href => route('createstud')} Добавить студента
+                                %li
+                                    %a.blog-nav-item{:href => "#{route('newpredm')}"} Добавить предмет
+                                %li
+                                    %a.blog-nav-item{:href => route('indexstud')} Отобразить студентов
+                                %li
+                                    %a.blog-nav-item{:href => route('ocenstud')} Оценить студента
+
                     %li
                         %a{:href => "#{route('home')}"} Главная страница
                     %li

@@ -9,14 +9,14 @@ class CreatePredm extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidnewstud
      */
     public function up()
     {
-        Schema::create('predm', function (Blueprint $table){
+        Schema::create('predms', function (Blueprint $table){
            $table->increments('id');
            $table->string('name');
-           $table->string('shotrt_name',25);
+           $table->string('short_name',25);
            $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePredm extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('predm');
+        Schema::dropIfExists('predms');
     }
 }

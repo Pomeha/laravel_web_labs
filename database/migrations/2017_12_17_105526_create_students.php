@@ -17,6 +17,7 @@ class CreateStudents extends Migration
            $table->increments('id');
            $table->string('fio');
            $table->string('group', 3);
+           $table->integer('student_id');
            $table->timestamps();
         });
     }

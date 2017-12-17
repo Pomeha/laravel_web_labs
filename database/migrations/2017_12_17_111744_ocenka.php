@@ -13,10 +13,12 @@ class Ocenka extends Migration
      */
     public function up()
     {
-        Schema::create('ocenka', function (Blueprint $table){
+        Schema::create('ocenkas', function (Blueprint $table){
            $table->increments('id');
+           $table->string('predm');
            $table->string('rus');
            $table->char('etsc');
+           $table->string('stud_name');
            $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class Ocenka extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ocenka');
+        Schema::dropIfExists('ocenkas');
     }
 }

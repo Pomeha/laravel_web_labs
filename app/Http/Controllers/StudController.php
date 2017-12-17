@@ -7,16 +7,19 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\User;
 use App\Students;
+use App\Predm;
+use App\Ocenkas;
 use Session;
 
 class StudController extends Controller
 {
     public function index()
     {
+        $predms = Predm::all();
         $students = Students::all();
-        return view('probka.indexstudents',['students'=>$students]);
+        $ocenkas = Ocenkas::all();
+        return view('probka.indexstudents',['students'=>$students,'predms'=>$predms,'ocenkas'=>$ocenkas]);
     }
 
     public function Create()
@@ -35,8 +38,11 @@ class StudController extends Controller
         $student->group = $request->group;
 
         $student->save();
-
-        Session::flash('success', 'Student created');
         return redirect()->route('indexstud');
+    }
+
+    public function goodstuds()
+    {
+
     }
 }
