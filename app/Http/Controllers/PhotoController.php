@@ -8,10 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Post;
 use Session;
+use Carbon\Carbon;
+
 
 class PhotoController extends Controller{
 
     public function index(){
+        $this->Count('pages.index',Carbon::now()->month);
         $photos = [];
         $alts = [];
         for($i = 0; $i < 6; $i++){

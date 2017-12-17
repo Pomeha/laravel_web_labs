@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
@@ -22,7 +23,6 @@ class PagesController extends Controller
         // Fetch records in pagination so only 10 pages per page
         // To get all records you may use get() method
         $pages = Post::where('post_type', 'page')->paginate( 10 );
-
         return view('pages.index', ['pages' => $pages]);
     }
 

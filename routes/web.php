@@ -31,5 +31,6 @@ Route::post('comments/{comment}/unapprove', 'CommentsController@unapproveComment
 Route::post('importCVS', 'CVScontroller@importCVS');
 Route::get('importexport', 'CVScontroller@importexport')->name('importexport');
 Route::get('index', 'PagesController@getIndex')->name('blog');
+Route::get('stat','StatisticsController@Index')->name('stat');
 
 Auth::routes();
