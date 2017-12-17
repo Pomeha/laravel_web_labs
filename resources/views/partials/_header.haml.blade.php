@@ -24,6 +24,8 @@
             .header
                 %ul#nav.nav.nav-pills.text-center
                     %li
+                        %a{:href => "#{route('createstud')}"} Добавить студена
+                    %li
                         %a{:href => "#{route('home')}"} Главная страница
                     %li
                         %a{:href => "#{route('blog')}"} Блог
