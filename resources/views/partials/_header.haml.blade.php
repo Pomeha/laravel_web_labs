@@ -32,6 +32,8 @@
                     %li
                         %a{:href => "#{route('study')}"} Учеба
                     %li
+                        %a{:href => "#{route('domensview')}"} Проверка домена
+                    %li
                         @if (Auth::guest())
                         %li
                             %a.blog-nav-item(class="#{ Request::is('login') ? 'active' : '' }" href=route('login'))
