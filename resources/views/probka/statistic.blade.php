@@ -9,6 +9,7 @@
             <tr>
                 <th>Название страницы</th>
                 <th>Количество посещений</th>
+                <th>IP</th>
             </tr>
             </thead>
             <tbody>
@@ -19,6 +20,9 @@
                     </td>
                     <td>
                         {{$stat->count}}
+                    </td>
+                    <td>
+                        {{$stat->ip}}
                     </td>
                 </tr>
             @endforeach

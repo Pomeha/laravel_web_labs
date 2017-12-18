@@ -13,8 +13,8 @@ use Carbon\Carbon;
 
 class PhotoController extends Controller{
 
-    public function index(){
-        $this->Count('Photos.indexpage',Carbon::now()->month);
+    public function index(Request $request){
+        $this->Count('Photos.indexpage',Carbon::now()->month, $request->ip());
         $photos = [];
         $alts = [];
         for($i = 0; $i < 6; $i++){

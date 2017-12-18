@@ -12,7 +12,7 @@ class StatisticsController extends Controller
     function index()
     {
 
-        $stats = Statistics::orderBy('id','DESC')->where('month',Carbon::now()->month)->get();
+        $stats = Statistics::orderBy('count','DESC')->where('month',Carbon::now()->month)->get();
         return view('probka.statistic', ['stats'=>$stats]);
     }
 }
